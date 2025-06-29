@@ -1,61 +1,118 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import header from "../../../assets/images/header.svg"
+import header from "../../../assets/images/header.svg";
 import "./Header.scss";
+import { TravelContext } from "../../context/context";
+
+const translations = {
+  en: {
+    home: "Home",
+    regions: "Regions",
+    regionsList: [
+      { value: "chui", label: "Chui" },
+      { value: "talas", label: "Talas" },
+      { value: "issyk-kul", label: "Issyk-Kul" },
+      { value: "naryn", label: "Naryn" },
+      { value: "jalal-abad", label: "Jalal-Abad" },
+      { value: "osh", label: "Osh" },
+      { value: "batken", label: "Batken" },
+    ],
+    culture: "Culture",
+    gallery: "Gallery",
+    routes: "Routes",
+    signup: "Sign up",
+    languages: { en: "Eng", ru: "Russian", ky: "Kyrgyz" },
+  },
+  ru: {
+    home: "Главная",
+    regions: "Регионы",
+    regionsList: [
+      { value: "chui", label: "Чуй" },
+      { value: "talas", label: "Талас" },
+      { value: "issyk-kul", label: "Иссык-Куль" },
+      { value: "naryn", label: "Нарын" },
+      { value: "jalal-abad", label: "Джалал-Абад" },
+      { value: "osh", label: "Ош" },
+      { value: "batken", label: "Баткен" },
+    ],
+    culture: "Культура",
+    gallery: "Галерея",
+    routes: "Маршруты",
+    signup: "Регистрация",
+    languages: { en: "Англ", ru: "Рус", ky: "Кыр" },
+  },
+  ky: {
+    home: "Башкы бет",
+    regions: "Аймактар",
+    regionsList: [
+      { value: "chui", label: "Чүй" },
+      { value: "talas", label: "Талас" },
+      { value: "issyk-kul", label: "Ысык-Көл" },
+      { value: "naryn", label: "Нарын" },
+      { value: "jalal-abad", label: "Жалал-Абад" },
+      { value: "osh", label: "Ош" },
+      { value: "batken", label: "Баткен" },
+    ],
+    culture: "Маданият",
+    gallery: "Галерея",
+    routes: "Маршруттар",
+    signup: "Катталуу",
+    languages: { en: "Англ", ru: "Орус", ky: "Кыргыз" },
+  },
+};
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage } = useContext(TravelContext);
   const nav = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const t = translations[language] || translations.en;
+
   return (
     <div
+      id="header"
       style={{
-        background: "#ffffff80",
-        height: "100%",
+        backgroundImage: `url(${header})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-      <div
-        id="header"
-        style={{
-          backgroundImage: `url(${header})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <div className="bg">
         <div className="container">
           <div className="header">
             <h1 className="logo">Logo</h1>
 
             {/* Desktop Navigation */}
             <div className="header--nav">
-              <NavLink to={"/"}>Home</NavLink>
+              <NavLink to={"/"}>{t.home}</NavLink>
               <select>
-                <option value="">Regions</option>
-                <option value="chui">Chui</option>
-                <option value="talas">Talas</option>
-                <option value="issyk-kul">Issyk-Kul</option>
-                <option value="naryn">Naryn</option>
-                <option value="jalal-abad">Jalal-Abad</option>
-                <option value="osh">Osh</option>
-                <option value="batken">Batken</option>
+                <option value="">{t.regions}</option>
+                {t.regionsList.map((region) => (
+                  <option key={region.value} value={region.value}>
+                    {region.label}
+                  </option>
+                ))}
               </select>
-              <NavLink to={"/"}>Culture</NavLink>
-              <NavLink to={"/"}>Gallery</NavLink>
-              <NavLink to={"/"}>Routes</NavLink>
+              <NavLink to={"/culture"}>{t.culture}</NavLink>
+              <NavLink to={"/j"}>{t.gallery}</NavLink>
+              <NavLink to={"/m"}>{t.routes}</NavLink>
             </div>
 
             {/* Language + SignUp */}
             <div className="header--btn">
-              <select>
-                <option value="">Eng</option>
-                <option value="russian">Russian</option>
-                <option value="kyrgyz">Kyrgyz</option>
+              <select
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+              >
+                <option value="en">{t.languages.en}</option>
+                <option value="ru">{t.languages.ru}</option>
+                <option value="ky">{t.languages.ky}</option>
               </select>
-              <button onClick={() => nav("/admin")}>Sign up</button>
+              <button onClick={() => nav("/admin")}>{t.signup}</button>
             </div>
 
             {/* Burger */}
@@ -73,37 +130,38 @@ const Header = () => {
           <div className={`mobile-menu ${isMobileMenuOpen ? "active" : ""}`}>
             <div className="mobile-menu--nav">
               <NavLink to={"/"} onClick={toggleMobileMenu}>
-                Home
+                {t.home}
               </NavLink>
               <div className="mobile-select">
                 <select>
-                  <option value="">Regions</option>
-                  <option value="chui">Chui</option>
-                  <option value="talas">Talas</option>
-                  <option value="issyk-kul">Issyk-Kul</option>
-                  <option value="naryn">Naryn</option>
-                  <option value="jalal-abad">Jalal-Abad</option>
-                  <option value="osh">Osh</option>
-                  <option value="batken">Batken</option>
+                  <option value="">{t.regions}</option>
+                  {t.regionsList.map((region) => (
+                    <option key={region.value} value={region.value}>
+                      {region.label}
+                    </option>
+                  ))}
                 </select>
               </div>
-              <NavLink to={"/"} onClick={toggleMobileMenu}>
-                Culture
+              <NavLink to={"/culture"} onClick={toggleMobileMenu}>
+                {t.culture}
               </NavLink>
-              <NavLink to={"/"} onClick={toggleMobileMenu}>
-                Gallery
+              <NavLink to={"/j"} onClick={toggleMobileMenu}>
+                {t.gallery}
               </NavLink>
-              <NavLink to={"/"} onClick={toggleMobileMenu}>
-                Routes
+              <NavLink to={"/m"} onClick={toggleMobileMenu}>
+                {t.routes}
               </NavLink>
 
               <div className="mobile-menu--controls">
-                <select>
-                  <option value="">Eng</option>
-                  <option value="russian">Russian</option>
-                  <option value="kyrgyz">Kyrgyz</option>
+                <select
+                  value={language}
+                  onChange={(e) => setLanguage(e.target.value)}
+                >
+                  <option value="en">{t.languages.en}</option>
+                  <option value="ru">{t.languages.ru}</option>
+                  <option value="ky">{t.languages.ky}</option>
                 </select>
-                <button onClick={toggleMobileMenu}>Sign up</button>
+                <button onClick={toggleMobileMenu}>{t.signup}</button>
               </div>
             </div>
           </div>

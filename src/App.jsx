@@ -3,6 +3,13 @@ import "./App.scss";
 import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
 import Home from "./components/pages/Home/Home";
+import Culture from "./components/pages/Culture/Culture";
+import Games from "./components/pages/Culture/Games/Games";
+import Clothes from "./components/pages/Culture/Clothes/Clothes";
+import Admin from "./components/pages/Admin/Admin";
+import Logwelcome from "./components/pages/Admin/Logwelcome";
+import Logforgot from "./components/pages/Admin/Logforgot";
+import Fourcode from "./components/pages/Admin/Fourcode";
 
 function App() {
   const route = [
@@ -10,6 +17,41 @@ function App() {
       id: 1,
       path: "/",
       element: <Home />,
+    },
+    {
+      id: 2,
+      path: "/culture",
+      element: <Culture />,
+    },
+    {
+      id: 3,
+      path: "/games",
+      element: <Games />,
+    },
+    {
+      id: 4,
+      path: "/clothes",
+      element: <Clothes />,
+    },
+    {
+      id: 5,
+      path: "/admin",
+      element: <Admin />,
+    },
+    {
+      id: 6,
+      path: "/login",
+      element: <Logwelcome />,
+    },
+    {
+      id: 7,
+      path: "/logpassword",
+      element: <Logforgot />,
+    },
+    {
+      id: 8,
+      path: "/fourcode",
+      element: <Fourcode />,
     },
   ];
 
