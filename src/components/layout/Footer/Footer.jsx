@@ -1,6 +1,10 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaVk } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import inst from "../../../assets/images/inst.svg";
+import facebook from "../../../assets/images/facebook.svg";
+import vkk from "../../../assets/images/vkk.svg";
+import emaill from "../../../assets/images/emaill.svg";
 
 const Footer = () => {
   return (
@@ -10,18 +14,10 @@ const Footer = () => {
           <div className="footer--block1">
             <h3>logo</h3>
             <div className="footer--block1__icons">
-              <a>
-                <FaInstagram />
-              </a>
-              <a>
-                <FaFacebook />
-              </a>
-              <a>
-                <FaVk />
-              </a>
-              <a>
-                <MdEmail />
-              </a>
+              <img src={inst} alt="img" />
+              <img src={facebook} alt="img" />
+              <img src={vkk} alt="img" />
+              <img src={emaill} alt="img" />
             </div>
           </div>
           <div className="footer--block2">

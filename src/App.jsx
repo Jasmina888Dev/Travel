@@ -10,6 +10,11 @@ import Admin from "./components/pages/Admin/Admin";
 import Logwelcome from "./components/pages/Admin/Logwelcome";
 import Logforgot from "./components/pages/Admin/Logforgot";
 import Fourcode from "./components/pages/Admin/Fourcode";
+import Routess from "./components/pages/Routes/Routes";
+import Hand from "./components/pages/Culture/Hand/Hand";
+import Currency from "./components/pages/Culture/Currency/Currency";
+import Instrument from "./components/pages/Culture/Instruments/instruments";
+import Kitchen from "./components/pages/Culture/Kitchen/kitchen";
 
 function App() {
   const route = [
@@ -52,6 +57,31 @@ function App() {
       id: 8,
       path: "/fourcode",
       element: <Fourcode />,
+    },
+    {
+      id: 9,
+      path: "/routes",
+      element: <Routess />,
+    },
+    {
+      id: 10,
+      path: "/hand",
+      element: <Hand />,
+    },
+    {
+      id: 11,
+      path: "/currency",
+      element: <Currency />,
+    },
+    {
+      id: 12,
+      path: "/instrument",
+      element: <Instrument />,
+    },
+    {
+      id: 13,
+      path: "/kitchen",
+      element: <Kitchen />,
     },
   ];
 

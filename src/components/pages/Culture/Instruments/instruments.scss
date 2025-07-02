@@ -1,5 +1,5 @@
-#clothes {
-  .clothes {
+#instrument {
+  .instrument {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -30,6 +30,7 @@
         line-height: clamp(12px, 3vw, 35px);
         letter-spacing: 0.2px;
         color: rgba(0, 0, 0, 1);
+        text-align: center;
       }
     }
     &--block2 {

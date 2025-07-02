@@ -99,7 +99,7 @@ const Header = () => {
               </select>
               <NavLink to={"/culture"}>{t.culture}</NavLink>
               <NavLink to={"/j"}>{t.gallery}</NavLink>
-              <NavLink to={"/m"}>{t.routes}</NavLink>
+              <NavLink to={"/routes"}>{t.routes}</NavLink>
             </div>
 
             {/* Language + SignUp */}

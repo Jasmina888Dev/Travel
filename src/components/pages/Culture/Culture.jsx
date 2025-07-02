@@ -84,25 +84,25 @@ const Culture = () => {
               </h3>
               <h3>
                 {t.crafts}
-                <span>
+                <span onClick={() => nav("/hand")}>
                   <FaArrowRightLong />
                 </span>
               </h3>
               <h3>
                 {t.currency}
-                <span>
+                <span onClick={() => nav("/currency")}>
                   <FaArrowRightLong />
                 </span>
               </h3>
               <h3>
                 {t.instruments}
-                <span>
+                <span onClick={() => nav("/instrument")}>
                   <FaArrowRightLong />
                 </span>
               </h3>
               <h3>
                 {t.kitchen}
-                <span>
+                <span onClick={() => nav("/kitchen")}>
                   <FaArrowRightLong />
                 </span>
               </h3>
