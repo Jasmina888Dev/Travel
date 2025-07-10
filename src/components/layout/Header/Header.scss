@@ -1,8 +1,6 @@
 #header {
   background: #ffffff80;
-  position: sticky;
-  top: 0;
-  z-index: 99;
+  position: relative;
 }
 .bg {
   display: flex;
@@ -91,6 +89,11 @@
   border: none;
   cursor: pointer;
   transition: background 0.3s ease;
+}
+.header--btn a {
+  font-size: 40px;
+  margin-bottom: -10px;
+  color: #004a60;
 }
 
 .header--btn button:hover {

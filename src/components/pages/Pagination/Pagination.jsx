@@ -9,7 +9,7 @@ import { TravelContext } from "../../context/context";
 
 const Slider = () => {
   const [count, setCount] = useState(3);
-  const [activeSlide, setActiveSlide] = useState(1);
+  const [activeSlide, setActiveSlide] = useState(3);
   const { culture } = useContext(TravelContext);
   const current = culture.find((s) => s.id === activeSlide);
 

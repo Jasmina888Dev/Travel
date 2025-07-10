@@ -96,6 +96,7 @@
           .slider {
             position: absolute;
             cursor: pointer;
+            height: 15px;
             background: none;
             border-radius: 34px;
             top: 0;
@@ -104,7 +105,8 @@
             bottom: 0;
             transition: 0.4s;
             border: 2px solid #868889;
-            height: 22px;
+            min-height: 3vh;
+            width: 38px;
             &::before {
               position: absolute;
               content: "";
@@ -117,7 +119,6 @@
               transition: 0.4s;
             }
           }
-
           input:checked + .slider {
             background-color: #686a6b;
           }

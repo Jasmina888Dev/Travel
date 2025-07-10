@@ -15,6 +15,7 @@ import Hand from "./components/pages/Culture/Hand/Hand";
 import Currency from "./components/pages/Culture/Currency/Currency";
 import Instrument from "./components/pages/Culture/Instruments/instruments";
 import Kitchen from "./components/pages/Culture/Kitchen/kitchen";
+import Gallery from "./components/pages/Gallery/Gallery";
 
 function App() {
   const route = [
@@ -82,6 +83,11 @@ function App() {
       id: 13,
       path: "/kitchen",
       element: <Kitchen />,
+    },
+    {
+      id: 14,
+      path: "/gallery",
+      element: <Gallery />,
     },
   ];
 
