@@ -13,6 +13,8 @@ const Slider = () => {
   const { culture } = useContext(TravelContext);
   const current = culture.find((s) => s.id === activeSlide);
 
+  console.log(culture, "culture");
+
   return (
     <div
       className="slider"
@@ -32,7 +34,7 @@ const Slider = () => {
               />
               <div className="slide__text">
                 <h2>{current?.culture_name}</h2>
-                <p>{current?.description}</p>
+                <p>{current?.description?.slice(0, 540)}</p>
                 <button>
                   More <IoMdArrowRoundForward />
                 </button>

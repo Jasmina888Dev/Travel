@@ -6,7 +6,7 @@ import { TravelContext } from "../../../context/context";
 const Games = () => {
   const { culture } = useContext(TravelContext);
 
-  const games = culture.find((el) => el.id === 4);
+  const games = culture.find((el) => el.id === 10 || 11 || 12);
   return (
     <div id="games">
       <div className="container">
@@ -29,11 +29,11 @@ const Games = () => {
           </div>
           <div className="games--block2">
             <div className="games--block2__text">
-              <img
-                src="https://static.vecteezy.com/system/resources/previews/035/199/224/non_2x/ai-generated-blue-flower-isolated-on-transparent-background-free-png.png"
-                alt="img"
-              />
-              <p><span>{games?.culture_name}</span> <br /> <br /> {games?.description}</p>
+              <img src={games?.image} alt="img" />
+              <p>
+                <span>{games?.culture_name}</span> <br /> <br />{" "}
+                {games?.description}
+              </p>
             </div>
           </div>
         </div>

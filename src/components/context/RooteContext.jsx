@@ -14,14 +14,11 @@ const RooteContext = ({ children }) => {
     let { data } = res;
     setAttraction(data);
   }
-
   async function addCulture() {
     let res = await axios(`http://13.60.97.160/${language}/home/culture/`);
     let { data } = res;
     setCulture(data);
   }
-
-
 
   useEffect(() => {
     addAttraction();

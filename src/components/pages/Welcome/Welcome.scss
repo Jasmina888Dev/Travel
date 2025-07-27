@@ -14,7 +14,7 @@
 
       h1 {
         margin-top: clamp(42px, 7vw, 91px);
-        font-family: 'Abril Fatface', cursive;
+        font-family: "Abril Fatface", cursive;
         font-weight: 400;
         font-size: clamp(12px, 4.8vw, 70px);
         line-height: clamp(20px, 7vw, 90px);
@@ -69,7 +69,7 @@
       }
 
       p {
-        font-family: 'Frank Ruhl Libre', serif;
+        font-family: "Frank Ruhl Libre", serif;
         font-weight: 500;
         font-size: clamp(10px, 1.9vw, 24px);
         line-height: 140%;
@@ -91,10 +91,10 @@
     bottom: 0;
     width: 100%;
     left: 0;
-    padding: 10px;
+    padding: 50px 0;
 
     h1 {
-      font-family: 'Abril Fatface', cursive;
+      font-family: "Abril Fatface", cursive;
       font-weight: 400;
       font-size: clamp(16px, 5vw, 64px);
       line-height: 100%;
@@ -102,7 +102,7 @@
     }
 
     p {
-      font-family: 'Frank Ruhl Libre', serif;
+      font-family: "Frank Ruhl Libre", serif;
       font-weight: 500;
       font-size: clamp(12px, 2vw, 24px);
       line-height: 120%;
@@ -116,5 +116,6 @@
 @media (max-width: 700px) {
   #welcome .position {
     flex-direction: column;
+    padding: 0 0;
   }
 }

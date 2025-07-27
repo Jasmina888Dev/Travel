@@ -38,6 +38,8 @@ const Attraction = () => {
   const { attraction, language } = useContext(TravelContext);
   const text = bishkekText[language] || bishkekText.en;
 
+  console.log(attraction, "att");
+
   return (
     <div id="attraction">
       <div className="container">
@@ -66,7 +68,7 @@ const Attraction = () => {
                   <h2>{el.title}</h2>
                   <div className="attraction--cards__block--card__cirkle">
                     <h4>4.5</h4>
-                    <img src={dot} alt="" />
+                    <img src={dot} alt="" className="dotImg" />
                     <h6>23 764 reviews</h6>
                   </div>
                   <p>{el.description.slice(0, 220)}</p>
